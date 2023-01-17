@@ -1,62 +1,62 @@
 
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Accessible form example</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="form.css">
-    </head>
-    <body>
-        <main>
-            <h1>Register Your Cat</h1>
-            <form>
-              <div class="container">
-                <div class="item">
-                  <label for="name">Cat's name<span aria-hidden="true"> *</span></label>
-                  <input type="text" id="name" name="name" aria-required="true" aria-invalid="true" aria-describedby="error1">
-                  <p id="error1" class="error"><span aria-hidden="true" class="fas fa-exclamation-triangle"></span> Cat's name is required.</p>
-                  <label for="email">Your email<span aria-hidden="true"> *</span></label>
-                  <input type="email" id="email" name="email" autocomplete="email" aria-required="true" aria-describedby="error2" aria-invalid="true">
-                  <p id="error2" class="error"><span aria-hidden="true" class="fas fa-exclamation-triangle"></span> Email format <em>email@domain.com</em></p>
-                  <label for="birthday">Cat's birthday</label>
-                  <input type="text" id="birthday" name="birthday" aria-describedby="help1" pattern="^\s*(1[012]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/((?:19|20)\d{2})\s*$">
-                  <p id="help1" class="help">Birthday format <em>mm/dd/yyyy</em></p>
-                  <fieldset>
-                    <legend>Is your cat altered?</legend>
-                    <label for="yes"> <input name="altered" type="radio" id="yes">Yes</label>
-                    <label for="no"> <input name="altered" type="radio" id="no">No</label>
-                    <label for="maybe"> <input name="altered" type="radio" id="maybe" checked>Not sure</label>
-                  </fieldset>
-                </div>
-                <div class="item">
-                  <label for="markings">Cat's markings<span aria-hidden="true"> *</span></label>
-                  <select aria-required="true" name="markings" id="markings">
-                    <option value=""> select an option </option>
-                    <option value="solid">Solid</option>
-                    <option value="multi">Multi-color</option>
-                    <option value="calico">Calico</option>
-                    <option value="tabby">Tabby</option>
-                    <option value="torbie">Torbie</option>
-                    <option value="tortoiseshell">Tortoiseshell</option>
-                    <option value="tuxedo">Tuxedo</option>
-                  </select>
-                  <div id="message3">
-                    <p id="error3" class="error"><span aria-hidden="true" class="fas fa-exclamation-triangle"></span> Select cat's markings.</p>
-                  </div>
-                  <fieldset>
-                    <legend>Cat's colors &#8212; select at least 1</legend>
-                    <p><label for="black"> <input type="checkbox" id="black" name="black">Black</label></p>
-                    <p><label for="white"> <input type="checkbox" id="white" name="white">White</label></p>
-                    <p><label for="brown"> <input type="checkbox" id="brown" name="brown">Brown</label></p>
-                    <p><label for="orange"> <input type="checkbox" id="orange" name="orange">Orange</label></p>
-                    <p><label for="gray"> <input type="checkbox" id="gray" name="gray">Gray</label></p>
-                  </fieldset>
-                </div>
-              </div>
-              <button type="submit">Send</button>
-            </form>
-          </main>
-          <script src="https://kit.fontawesome.com/127c73a8ed.js" crossorigin="anonymous"></script>
-    </body>
+<html lang=en-US>
+  <head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>Register Your Cat</title>
+    <link rel="stylesheet" type="text/css" href="form.css" />
+  </head>
+  <body> 
+    <main>
+      <h1>Register Your Cat</h1>
+      <div id="error-message" tabindex="-1"></div>
+      <form id="register" action="thank-you.html" method="post" novalidate>
+        <div class="container">
+          <div class="item">
+            <label for="name">Cat's name<span aria-hidden="true"> *</span></label>
+            <p id="error1" class="error"></p>
+            <input type="text" id="name" name="name" aria-required="true" aria-describedby="error1">
+            <label for="email">Your email<span aria-hidden="true"> *</span></label>
+            <p id="error2" class="error"></p>
+            <input type="email" id="email" name="email" autocomplete="email" aria-required="true" aria-describedby="error2">
+            <label for="birthday">Cat's birthday</label>
+            <p id="help1" class="help">Birthday format <em>mm/dd/yyyy</em></p>
+            <input type="text" id="birthday" name="birthday" inputmode="numeric" aria-describedby="help1" pattern="^\s*(1[012]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/((?:19|20)\d{2})\s*$">
+            <fieldset>
+              <legend>Is your cat altered? <span aria-hidden="true"> *</span></legend>
+              <label for="yes"> <input name="altered" type="radio" id="yes">Yes</label>
+              <label for="no"> <input name="altered" type="radio" id="no">No</label>
+              <label for="maybe"> <input name="altered" type="radio" id="maybe" checked>Not sure</label>
+            </fieldset>
+          </div>
+          <div class="item">
+            <label for="markings">Cat's markings<span aria-hidden="true"> *</span></label>
+            <p id="error3" class="error"></p>
+            <select aria-required="true" name="markings" id="markings" aria-describedby="error3">
+              <option value=""> select an option </option>
+              <option value="solid">Solid</option>
+              <option value="multi">Multi-color</option>
+              <option value="calico">Calico</option>
+              <option value="tabby">Tabby</option>
+              <option value="torbie">Torbie</option>
+              <option value="tortoiseshell">Tortoiseshell</option>
+              <option value="tuxedo">Tuxedo</option>
+            </select>
+            <fieldset>
+              <legend id="colors">Cat's colors <span aria-hidden="true"> *</span> <span id="error4"></span></legend>
+              <p><label for="black"> <input type="checkbox" id="black" name="black">Black</label></p>
+              <p><label for="white"> <input type="checkbox" id="white" name="white">White</label></p>
+              <p><label for="brown"> <input type="checkbox" id="brown" name="brown">Brown</label></p>
+              <p><label for="orange"> <input type="checkbox" id="orange" name="orange">Orange</label></p>
+              <p><label for="gray"> <input type="checkbox" id="gray" name="gray">Gray</label></p>
+            </fieldset>
+          </div>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </body>
+  <script src="form.js"></script>
+  <script src="https://kit.fontawesome.com/127c73a8ed.js" crossorigin="anonymous"></script>
 </html>
