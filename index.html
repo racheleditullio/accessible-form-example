@@ -5,7 +5,7 @@
     <meta charset=utf-8>
     <meta name=viewport content="width=device-width,initial-scale=1">
     <title>Register Your Cat</title>
-    <link rel="stylesheet" type="text/css" href="form.css" />
+    <link rel="stylesheet" type="text/css" href="form.css">
   </head>
   <body> 
     <main>
@@ -21,13 +21,13 @@
             <p id="error2" class="error"></p>
             <input type="email" id="email" name="email" autocomplete="email" aria-required="true" aria-describedby="error2">
             <label for="birthday">Cat's birthday</label>
-            <p id="help1" class="help">Birthday format <em>mm/dd/yyyy</em></p>
-            <input type="text" id="birthday" name="birthday" inputmode="numeric" aria-describedby="help1" pattern="^\s*(1[012]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/((?:19|20)\d{2})\s*$">
+            <p id="error4" class="help">Birthday format is <em>mm/dd/yyyy</em>.</p>
+            <input type="text" id="birthday" name="birthday" autocomplete="off" inputmode="numeric" aria-describedby="error4" pattern="^\s*(1[012]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/((?:19|20)\d{2})\s*$" maxlength="10">
             <fieldset>
               <legend>Is your cat altered? <span aria-hidden="true"> *</span></legend>
+              <label for="maybe"> <input name="altered" type="radio" id="maybe" checked>Not sure</label>
               <label for="yes"> <input name="altered" type="radio" id="yes">Yes</label>
               <label for="no"> <input name="altered" type="radio" id="no">No</label>
-              <label for="maybe"> <input name="altered" type="radio" id="maybe" checked>Not sure</label>
             </fieldset>
           </div>
           <div class="item">
@@ -43,8 +43,9 @@
               <option value="tortoiseshell">Tortoiseshell</option>
               <option value="tuxedo">Tuxedo</option>
             </select>
-            <fieldset>
-              <legend id="colors">Cat's colors <span aria-hidden="true"> *</span> <span id="error4"></span></legend>
+            <fieldset id="colors">
+              <legend aria-describedby="error5">Cat's colors <span aria-hidden="true"> *</span></legend>
+              <p id="error5" class="error"></p>
               <p><label for="black"> <input type="checkbox" id="black" name="black">Black</label></p>
               <p><label for="white"> <input type="checkbox" id="white" name="white">White</label></p>
               <p><label for="brown"> <input type="checkbox" id="brown" name="brown">Brown</label></p>
@@ -56,7 +57,7 @@
         <button type="submit">Send</button>
       </form>
     </main>
+    <script src="form.js"></script>
+    <script src="https://kit.fontawesome.com/127c73a8ed.js" crossorigin="anonymous"></script>
   </body>
-  <script src="form.js"></script>
-  <script src="https://kit.fontawesome.com/127c73a8ed.js" crossorigin="anonymous"></script>
 </html>
