@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;900&display=swap");
 :root {
-  --primary: #e70cff;
+  --primary: #fc466b;
   --secondary: #fff;
   --tertiary: #222;
-  --error: #ff3466;
+  --error: #fc466b;
+  --gradient: linear-gradient(90deg, rgba(232,2,83,1) 0%, rgba(132,21,161,1) 82%);
 }
 body {
   background-color: var(--tertiary);
@@ -38,12 +39,15 @@ main {
   flex-basis: 40%;
 }
 h1 {
-  border-bottom: 0.25em solid var(--primary);
-  padding: 0 1em;
+  border: 0.1em solid var(--secondary);
+  border-radius: 0.25em;
+  padding: 0.25em;
   font-size: 3em;
   text-align: center;
-  color: var(--primary);
+  color: var(--secondary);
   margin-top: 0;
+  background: rgb(232,2,83);
+  background: var(--gradient);
 }
 label,
 legend {
@@ -81,7 +85,7 @@ select {
 }
 input[aria-invalid="true"],
 select[aria-invalid="true"] {
-  border: 4px solid var(--error);
+  border: 0.2em solid var(--error);
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -92,8 +96,8 @@ input[type="radio"] {
 }
 button {
   font-weight: bold;
-  background-color: var(--primary);
-  border: 4px solid var(--primary);
+  background-color: var(--secondary);
+  border: 0.1em solid var(--secondary);
   color: var(--tertiary);
   font-size: 2em;
   padding: 0.5em;
@@ -103,19 +107,17 @@ button {
 }
 button:hover,
 button:focus {
-  background-color: var(--tertiary);
-  color: var(--primary);
+  background: var(--primary);
 }
 .errors {
   padding: 1em;
-  border: 4px solid var(--error);
+  border: 0.2em solid var(--error);
   border-radius: 0.25em;
 }
 .error,
 .help {
   margin-bottom: 1em;
   font-size: 1.1em;
-  font-weight: bold;
 }
 .error {
   color: var(--error);
