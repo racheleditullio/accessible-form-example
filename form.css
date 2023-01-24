@@ -39,7 +39,6 @@ main {
   flex-basis: 40%;
 }
 h1 {
-  border: 0.1em solid var(--secondary);
   border-radius: 0.25em;
   padding: 0.25em;
   font-size: 3em;
@@ -72,6 +71,7 @@ fieldset {
 fieldset label {
   font-weight: normal;
   display: inline;
+  white-space: nowrap;
 }
 input[type="text"],
 input[type="email"],
@@ -107,7 +107,8 @@ button {
 }
 button:hover,
 button:focus {
-  background: var(--primary);
+  background-color: #8415A1;
+  color: var(--secondary);
 }
 .errors {
   padding: 1em;

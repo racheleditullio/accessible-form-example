@@ -21,14 +21,16 @@ error1.innerHTML = "";
 error2.innerHTML = "";
 error3.innerHTML = "";
 error4.innerHTML = "Birthday format is <em>mm/dd/yyyy</em>.";
-error5.innerHTML = "";
+error5.innerHTML = "Select at least 1 color.";
 nameField.removeAttribute("aria-invalid");
 emailField.removeAttribute("aria-invalid");
 markingsField.removeAttribute("aria-invalid");
 dateField.removeAttribute("aria-invalid");
-colorField.removeAttribute("aria-invalid");
+colorField.classList.remove("errors");
 error4.classList.remove("error");
 error4.classList.add("help");
+error5.classList.remove("error");
+error5.classList.add("help");
 }
 
 function validateForm() {
@@ -90,7 +92,10 @@ function validateForm() {
     const error = document.createElement("li");
     error.innerHTML = "<a href='#colors'>Cat's colors</a> is required.";
     errors.appendChild(error);
-    error5.innerHTML = `${icon} Select at least one color.`;
+    document.getElementById("colors").classList.add("errors");
+    error5.innerHTML = `${icon} Select at least 1 color.`;
+    error5.classList.remove("help");
+    error5.classList.add("error");   
     hasErrors = true;
     }
     if (hasErrors) {
