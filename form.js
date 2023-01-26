@@ -119,3 +119,10 @@ form.addEventListener("submit", function(e) {
         e.preventDefault();
     }
 });
+
+// Add slashes to birthday
+dateField.addEventListener("keyup", function () {
+  if (this.value.length === 2 || this.value.length === 5) {
+    this.value += "/";
+  }
+});
