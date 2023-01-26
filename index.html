@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang=en-US>
   <head>
@@ -11,15 +10,15 @@
     <main>
       <h1>Register Your Cat</h1>
       <div id="error-message" tabindex="-1"></div>
-      <form id="register" action="thank-you.html" method="post" novalidate>
+      <form id="register" action="thank-you.html" method="post">
         <div class="container">
           <div class="item">
             <label for="name">Cat's name<span aria-hidden="true"> *</span></label>
             <p id="error1" class="error"></p>
-            <input type="text" id="name" name="name" aria-required="true" aria-describedby="error1">
+            <input type="text" id="name" name="name" required aria-describedby="error1">
             <label for="email">Your email<span aria-hidden="true"> *</span></label>
             <p id="error2" class="error"></p>
-            <input type="email" id="email" name="email" autocomplete="email" aria-required="true" aria-describedby="error2">
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="error2">
             <label for="birthday">Cat's birthday</label>
             <p id="error4" class="help">Birthday format is <em>mm/dd/yyyy</em>.</p>
             <input type="text" id="birthday" name="birthday" autocomplete="off" inputmode="numeric" aria-describedby="error4" pattern="^\s*(1[012]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/((?:19|20)\d{2})\s*$" maxlength="10">
@@ -33,7 +32,7 @@
           <div class="item">
             <label for="markings">Cat's markings<span aria-hidden="true"> *</span></label>
             <p id="error3" class="error"></p>
-            <select aria-required="true" name="markings" id="markings" aria-describedby="error3">
+            <select required name="markings" id="markings" aria-describedby="error3">
               <option value=""> select an option </option>
               <option value="solid">Solid</option>
               <option value="multi">Multi-color</option>

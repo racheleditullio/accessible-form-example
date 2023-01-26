@@ -12,6 +12,8 @@ const error4 = document.getElementById("error4");
 const error5 = document.getElementById("error5");
 const icon = '<span aria-hidden="true" class="fas fa-exclamation-triangle"></span><span class="visually-hidden">Error</span> ';
 
+form.setAttribute("novalidate", true);
+
 function clearErrors() {
 let errors = document.getElementById("errors");
 if (errors) {
@@ -116,11 +118,4 @@ form.addEventListener("submit", function(e) {
     if (!validateForm()) {
         e.preventDefault();
     }
-});
-
-// Add slashes to birthday
-dateField.addEventListener("keyup", function () {
-  if (this.value.length === 2 || this.value.length === 5) {
-    this.value += "/";
-  }
 });
