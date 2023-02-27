@@ -10,27 +10,28 @@
     <main>
       <h1>Register Your Cat</h1>
       <div id="error-message" tabindex="-1"></div>
+      <p>* denotes required fields.</p>
       <form id="register" action="thank-you.html" method="post">
         <div class="container">
           <div class="item">
-            <label for="name">Cat's name<span aria-hidden="true"> *</span></label>
+            <label for="name">Cat's name *</label>
             <p id="error1" class="error"></p>
             <input type="text" id="name" name="name" required aria-describedby="error1">
-            <label for="email">Your email<span aria-hidden="true"> *</span></label>
+            <label for="email">Your email *</label>
             <p id="error2" class="error"></p>
             <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="error2">
-            <label for="birthday">Cat's birthday</label>
+            <label for="birthday">Cat's birthday (optional)</label>
             <p id="error4" class="help">Birthday format is <em>mm/dd/yyyy</em>.</p>
             <input type="text" id="birthday" name="birthday" autocomplete="off" inputmode="numeric" aria-describedby="error4" pattern="^\s*(1[012]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/((?:19|20)\d{2})\s*$" maxlength="10">
             <fieldset>
-              <legend>Is your cat altered? <span aria-hidden="true"> *</span></legend>
+              <legend>Is your cat altered? *</legend>
               <label for="maybe"> <input name="altered" type="radio" id="maybe" checked>Not sure</label>
               <label for="yes"> <input name="altered" type="radio" id="yes">Yes</label>
               <label for="no"> <input name="altered" type="radio" id="no">No</label>
             </fieldset>
           </div>
           <div class="item">
-            <label for="markings">Cat's markings<span aria-hidden="true"> *</span></label>
+            <label for="markings">Cat's markings *</label>
             <p id="error3" class="error"></p>
             <select required name="markings" id="markings" aria-describedby="error3">
               <option value=""> select an option </option>
@@ -43,9 +44,9 @@
               <option value="tuxedo">Tuxedo</option>
             </select>
             <fieldset id="colors">
-              <legend aria-describedby="error5">Cat's colors <span aria-hidden="true"> *</span></legend>
+              <legend>Cat's colors *</legend>
               <p id="error5" class="help">Select at least 1 color.</p>
-              <p><label for="black"> <input type="checkbox" id="black" name="black">Black</label></p>
+              <p><label for="black"> <input type="checkbox" id="black" name="black" aria-describedby="error5">Black</label></p>
               <p><label for="white"> <input type="checkbox" id="white" name="white">White</label></p>
               <p><label for="brown"> <input type="checkbox" id="brown" name="brown">Brown</label></p>
               <p><label for="orange"> <input type="checkbox" id="orange" name="orange">Orange</label></p>
